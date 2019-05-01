@@ -1,10 +1,10 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 from selenium import webdriver
 import unittest
 import time
 
-#tworze klase WSBPl check dziedziczona po klasie testcase z modulu unittest
+# tworze klase WSBPl check dziedziczona po klasie testcase z modulu unittest
 class WsbPlCheck(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Chrome()

@@ -1,15 +1,11 @@
 google:
-	python3 google.py
+	python /home/adi/PycharmProjects/selenium/tests_dir/google.py
 
 search:
-	python3 search.py
+	python /home/adi/PycharmProjects/selenium/tests_dir/search.py
 
 hello:
-	python3 hello_webdrv.py
+	python /home/adi/PycharmProjects/selenium/tests_dir/hello_webdrv.py
 
 wizzair:
-	python3 wizzair.py
-
-
-
-
+	python /home/adi/PycharmProjects/selenium/tests_dir/wizzair.py

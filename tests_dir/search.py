@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 from selenium import webdriver
@@ -20,7 +20,7 @@ class SearchTestCase(unittest.TestCase):
         wyszukaj.clear()
         wyszukaj.send_keys('RTX 2070')
         wyszukaj.send_keys(Keys.RETURN)
-        assert 'Brak wyników.' not in driver.page_source
+        assert u'Brak wyników.' not in driver.page_source
 
         pole = driver.find_element_by_xpath('//*[@id="body"]/table[1]/tbody/tr/td[1]/span')
         self.assertTrue(pole.is_displayed)

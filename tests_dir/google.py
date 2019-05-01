@@ -1,8 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 from selenium import webdriver
 import unittest
-import time
+from time import sleep
 
 class GoogleCheck(unittest.TestCase):
     def setUp(self):
@@ -12,7 +12,10 @@ class GoogleCheck(unittest.TestCase):
     def tearDown(self):
         self.driver.quit()
     def test_serch(self):
+        sleep(3)
         pass
+
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)

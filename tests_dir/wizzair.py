@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 from selenium import webdriver
@@ -40,8 +40,8 @@ class WizzairRegistration(unittest.TestCase):
     def tearDown(self):
         self.driver.quit()
 
-#metody rozpoczynające się od słowa testowe
-#są to przypadki testowe
+# metody rozpoczynające się od słowa testowe
+# są to przypadki testowe
 
     def test_wrong_email(self):
         """
@@ -56,21 +56,21 @@ class WizzairRegistration(unittest.TestCase):
         imie = driver.find_element_by_xpath('//*[@id="regmodal-scroll-hook-1"]/label[1]/div[1]/input')
         imie.send_keys('Jan')
         nazwisko = driver.find_element_by_xpath('//*[@id="regmodal-scroll-hook-1"]/label[2]/div[1]/input')
-        #xpath napisany: //input[@placeholder='Nazwisko']
+# xpath napisany: //input[@placeholder='Nazwisko']
         nazwisko.send_keys('Nowak')
         imie.click()
-        płeć = driver.find_element_by_xpath('//*[@id="regmodal-scroll-hook-2"]/div[1]/label[2]/span')
-        płeć.click()
-        #wymuszenie przyciśnięcia pola
-        #driver.execute_script('arguments[0].click()', płeć)
+        plec = driver.find_element_by_xpath('//*[@id="regmodal-scroll-hook-2"]/div[1]/label[2]/span')
+        plec.click()
+# wymuszenie przyciśnięcia pola
+# driver.execute_script('arguments[0].click()', płeć)
         telefon = driver.find_element_by_xpath('//*[@id="regmodal-scroll-hook-3"]/input')
         telefon.send_keys('12345678')
         email = driver.find_element_by_xpath('//*[@id="regmodal-scroll-hook-4"]/div[1]/label/input')
         email.send_keys('adadada-gmail.com')
-        hasło = driver.find_element_by_xpath('//*[@id="regmodal-scroll-hook-5"]/div[1]/label/input')
-        hasło.send_keys('QWERTYuiop12345')
-        narodowość = driver.find_element_by_xpath('//*[@id="regmodal-scroll-hook-6"]/div[1]/label/input')
-        narodowość.send_keys('Polska')
+        haslo = driver.find_element_by_xpath('//*[@id="regmodal-scroll-hook-5"]/div[1]/label/input')
+        haslo.send_keys('QWERTYuiop12345')
+        narodowosc = driver.find_element_by_xpath('//*[@id="regmodal-scroll-hook-6"]/div[1]/label/input')
+        narodowosc.send_keys('Polska')
         pole_1 = driver.find_element_by_xpath('//*[@id="registration-modal"]/form/div[2]/div[9]/span/label[2]')
         pole_1.click()
         self.assertFalse(pole_1.is_selected())
@@ -79,15 +79,16 @@ class WizzairRegistration(unittest.TestCase):
         self.assertFalse(pole_2.is_selected())
 
         '''nie konieczne do tego testu'''
-        #zarejestruj = driver.find_element_by_xpath('//*[@id="registration-modal"]/form/div[2]/div[11]/button')
-        #zarejestruj.click()
+# zarejestruj = driver.find_element_by_xpath('//*[@id="registration-modal"]/form/div[2]/div[11]/button')
+# zarejestruj.click()
 
         '''To jest dopiero właściwy test'''
         zbadaj = driver.find_element_by_xpath('//*[@id="regmodal-scroll-hook-4"]/div[2]/span/span')
         self.assertTrue(zbadaj.is_displayed())
         self.assertEqual('Nieprawidłowy adres e-mail', zbadaj.text)
-
         time.sleep(10)
+
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
